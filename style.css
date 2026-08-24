@@ -1,0 +1,291 @@
+/* =========================================
+   Variables & Resets
+   ========================================= */
+:root {
+    --primary-color: #123456;
+    /* Deep Navy Blue */
+    --accent-color: #D4AF37;
+    /* Elegant Gold */
+    --text-main: #333333;
+    --text-muted: #666666;
+    --bg-main: #FFFFFF;
+    --bg-light: #F8F9FA;
+    --border-color: #E2E8F0;
+
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-main);
+    background-color: var(--bg-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-header h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   Hero Section
+   ========================================= */
+.hero {
+    background: linear-gradient(135deg, var(--bg-light) 0%, #FFFFFF 100%);
+    padding: 120px 0 80px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero .subtitle {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    line-height: 1.2;
+    margin-bottom: 30px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tech-badge {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: var(--primary-color);
+    color: #FFF;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(18, 52, 86, 0.2);
+}
+
+/* =========================================
+   Gallery Section
+   ========================================= */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.gallery-item {
+    background: var(--bg-main);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px;
+    background: #fafafa;
+}
+
+.gallery-item .caption {
+    padding: 20px;
+    text-align: center;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+/* =========================================
+   Anatomy / Exploded View Section
+   ========================================= */
+.anatomy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.anatomy-image img {
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.anatomy-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.anatomy-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.anatomy-item h3::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.anatomy-item p {
+    color: var(--text-muted);
+    padding-left: 27px;
+}
+
+/* =========================================
+   Interview / FAQ Accordion Section
+   ========================================= */
+.faq-accordion {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+details {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+details[open] {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-color: var(--accent-color);
+}
+
+summary {
+    padding: 20px 25px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    transition: var(--transition);
+}
+
+details[open] summary::after {
+    content: '−';
+}
+
+.faq-content {
+    padding: 0 25px 25px 25px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+    margin-top: 5px;
+    padding-top: 20px;
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+footer {
+    background-color: var(--primary-color);
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   Responsive Design
+   ========================================= */
+@media (max-width: 992px) {
+    .anatomy-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+}
