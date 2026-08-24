@@ -234,14 +234,18 @@ summary::-webkit-details-marker {
 }
 
 summary::after {
-    content: '+';
-    font-size: 1.5rem;
+    content: '';
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    transform: rotate(45deg) translateY(-2px);
     color: var(--accent-color);
     transition: var(--transition);
 }
 
 details[open] summary::after {
-    content: '−';
+    transform: rotate(225deg) translateY(-2px);
 }
 
 .faq-content {
